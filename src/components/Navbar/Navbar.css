@@ -1,0 +1,219 @@
+/* ==========================================================================
+   NAVBAR COMPONENT STYLES
+   Exact reproduction of top navigation from reference screenshot
+   ========================================================================== */
+
+.navbar-header {
+  width: 100%;
+  padding: 26px 40px;
+  position: relative;
+  z-index: 50;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Brand Logo & Text */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.brand-mark-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.brand-logo:hover .brand-mark-wrapper {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+}
+
+/* Horizontal Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--duration-fast) ease;
+  padding: 6px 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link-active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Active underline indicator matching screenshot */
+.nav-indicator {
+  position: absolute;
+  bottom: -4px;
+  width: 22px;
+  height: 2.5px;
+  background: var(--accent-turquoise);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px rgba(54, 245, 227, 0.6);
+  animation: indicatorFadeIn 0.25s ease-out;
+}
+
+@keyframes indicatorFadeIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Download CV Button */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-btn);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(6, 19, 23, 0.6);
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  backdrop-filter: blur(8px);
+}
+
+.btn-download-cv:hover {
+  border-color: var(--accent-turquoise);
+  background: rgba(12, 35, 38, 0.8);
+  box-shadow: 0 0 16px rgba(54, 245, 227, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-download-cv:active {
+  transform: translateY(0);
+}
+
+.download-icon {
+  transition: transform var(--duration-fast) ease;
+}
+
+.btn-download-cv:hover .download-icon {
+  transform: translateY(1.5px);
+  color: var(--accent-turquoise);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  color: var(--text-primary);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar-header {
+    padding: 18px 24px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-drawer {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(2, 9, 11, 0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mobile-nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: block;
+    padding: 8px 0;
+  }
+
+  .mobile-nav-link-active {
+    color: var(--accent-turquoise);
+    font-weight: 700;
+  }
+
+  .mobile-cv-item {
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-cv-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+}

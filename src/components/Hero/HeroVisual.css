@@ -1,0 +1,362 @@
+/* ==========================================================================
+   HERO VISUAL & 3D DEPTH STYLES
+   Exact reproduction of the right zone composition
+   ========================================================================== */
+
+.hero-visual-container {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: visible;
+}
+
+/* 1. Volumetric Ambient Glow */
+.visual-ambient-glow {
+  position: absolute;
+  top: 45%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(
+    circle,
+    rgba(32, 230, 177, 0.28) 0%,
+    rgba(54, 245, 227, 0.16) 35%,
+    rgba(2, 9, 11, 0) 70%
+  );
+  filter: blur(65px);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 2. Translucent 3D Triangular Geometry */
+.prism-geometry-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 380px;
+  height: 420px;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 0 25px rgba(54, 245, 227, 0.35));
+}
+
+.prism-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 3. Floating Transparent Glass Cube */
+.floating-glass-cube-wrapper {
+  position: absolute;
+  top: 16%;
+  left: 18%;
+  z-index: 10;
+  perspective: 800px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-cube {
+  width: 52px;
+  height: 52px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cubeFloat 5s ease-in-out infinite;
+}
+
+@keyframes cubeFloat {
+  0%, 100% {
+    transform: rotateX(24deg) rotateY(38deg) rotateZ(10deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(32deg) rotateY(48deg) rotateZ(16deg) translateY(-14px);
+  }
+}
+
+.cube-face {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: rgba(32, 230, 177, 0.14);
+  border: 1.5px solid rgba(54, 245, 227, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 14px rgba(54, 245, 227, 0.35);
+}
+
+.cube-front  { transform: translateZ(26px); }
+.cube-back   { transform: rotateY(180deg) translateZ(26px); }
+.cube-right  { transform: rotateY(90deg) translateZ(26px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(26px); }
+.cube-top    { transform: rotateX(90deg) translateZ(26px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(26px); }
+
+.cube-inner-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  background: #36F5E3;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(8px);
+  box-shadow: 0 0 18px #20E6B1;
+  opacity: 0.85;
+}
+
+/* 4. Subject Portrait Frame */
+.hero-portrait-frame {
+  position: absolute;
+  top: 6%;
+  left: 22%;
+  width: 420px;
+  height: 500px;
+  z-index: 5;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.portrait-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
+  /* Seamless edge blending to dark background */
+  mask-image: linear-gradient(to bottom, 
+    black 75%, 
+    rgba(0,0,0,0.85) 85%, 
+    transparent 100%),
+    linear-gradient(to left, 
+    black 80%, 
+    transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, 
+    black 75%, 
+    rgba(0,0,0,0.85) 85%, 
+    transparent 100%),
+    linear-gradient(to left, 
+    black 80%, 
+    transparent 100%);
+}
+
+.portrait-reference-blend {
+  width: 225%;
+  height: auto;
+  position: absolute;
+  top: -12%;
+  left: -110%;
+  max-width: none;
+  filter: contrast(1.05) brightness(1.02);
+  user-select: none;
+  pointer-events: none;
+}
+
+.portrait-lighting-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 60%,
+    rgba(32, 230, 177, 0.12) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* 5. Luminous Turquoise Orbital Ring */
+.orbital-ring-wrapper {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  width: 480px;
+  height: 190px;
+  z-index: 6;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orbital-ring-track {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid transparent;
+  border-top: 4px solid #36F5E3;
+  border-left: 2px solid rgba(54, 245, 227, 0.5);
+  box-shadow: 
+    0 -4px 25px rgba(54, 245, 227, 0.75),
+    0 -10px 45px rgba(32, 230, 177, 0.4);
+  transform: rotate(5deg);
+}
+
+.orbital-ring-crescent {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 65%;
+  height: 25%;
+  border-radius: 50%;
+  border-top: 3.5px solid #FFFFFF;
+  filter: blur(0.5px);
+  box-shadow: 0 0 16px #36F5E3;
+}
+
+.orbital-ring-glow {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 8px;
+  background: #36F5E3;
+  filter: blur(8px);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* 6. Floating Glass Statistics Panel */
+.hero-stats-wrapper {
+  position: absolute;
+  top: 34%;
+  right: -2px;
+  z-index: 12;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-stats-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px 20px;
+  min-width: 110px;
+  border-radius: var(--radius-panel);
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-glass), 0 0 30px rgba(54, 245, 227, 0.08);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.hero-stats-panel:hover {
+  border-color: rgba(54, 245, 227, 0.5);
+  box-shadow: var(--shadow-glass), 0 0 35px rgba(32, 230, 177, 0.2);
+  transform: translateY(-2px);
+}
+
+.stats-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stats-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.stats-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.stats-divider {
+  width: 70%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1px;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1150px) {
+  .hero-visual-container {
+    height: 500px;
+  }
+  .prism-geometry-wrapper {
+    width: 320px;
+    height: 360px;
+    left: 12%;
+  }
+  .hero-portrait-frame {
+    width: 360px;
+    height: 440px;
+    left: 14%;
+  }
+  .orbital-ring-wrapper {
+    width: 400px;
+    height: 160px;
+  }
+  .hero-stats-wrapper {
+    right: -10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-visual-container {
+    height: 440px;
+    margin-top: 20px;
+  }
+  .prism-geometry-wrapper {
+    left: 50%;
+    transform: translateX(-50%) !important;
+  }
+  .hero-portrait-frame {
+    left: 50%;
+    transform: translateX(-50%) !important;
+  }
+  .floating-glass-cube-wrapper {
+    left: 15%;
+  }
+  .orbital-ring-wrapper {
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg) !important;
+    width: 360px;
+  }
+  .hero-stats-wrapper {
+    right: 10px;
+    top: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-visual-container {
+    height: 380px;
+  }
+  .hero-portrait-frame {
+    width: 290px;
+    height: 350px;
+  }
+  .prism-geometry-wrapper {
+    width: 260px;
+    height: 300px;
+  }
+  .hero-stats-panel {
+    padding: 14px 14px;
+    min-width: 85px;
+    gap: 10px;
+  }
+  .stats-number {
+    font-size: 22px;
+  }
+  .stats-label {
+    font-size: 11px;
+  }
+}

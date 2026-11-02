@@ -1,0 +1,360 @@
+/* ==========================================================================
+   HERO SECTION STYLES
+   Exact layout, typography, buttons, and proportions from reference image
+   ========================================================================== */
+
+.hero-section {
+  width: 100%;
+  padding: 10px 48px 50px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT ZONE: Typography & Interactive Actions
+   -------------------------------------------------------------------------- */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 620px;
+  z-index: 20;
+}
+
+/* Badge: Software Engineer */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6.5px 16px;
+  border-radius: var(--radius-badge);
+  background: var(--bg-badge);
+  border: 1px solid rgba(32, 230, 177, 0.32);
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.badge-pulse-dot {
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+  animation: badgeDotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes badgeDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px var(--accent-emerald);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+    box-shadow: 0 0 4px var(--accent-emerald);
+  }
+}
+
+.badge-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  letter-spacing: 0.01em;
+}
+
+/* Headings */
+.hero-heading-group {
+  margin-bottom: 16px;
+}
+
+.hero-heading-lead {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero-heading-name {
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.hero-name-highlight {
+  background: var(--gradient-name);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(32, 230, 177, 0.28));
+  display: inline-block;
+}
+
+/* Supporting Statement */
+.hero-statement {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 34px;
+  letter-spacing: -0.01em;
+}
+
+/* Call-to-Action Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: var(--radius-btn);
+  background: var(--gradient-accent);
+  color: var(--text-dark);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-btn-primary);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.cta-arrow-icon {
+  transition: transform var(--duration-fast) ease;
+}
+
+.btn-primary:hover .cta-arrow-icon {
+  transform: translateX(3px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 26px;
+  border-radius: var(--radius-btn);
+  background: rgba(6, 19, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(54, 245, 227, 0.5);
+  background: rgba(12, 35, 38, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(54, 245, 227, 0.2);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.cta-mail-icon {
+  color: var(--text-primary);
+  transition: color var(--duration-fast) ease;
+}
+
+.btn-secondary:hover .cta-mail-icon {
+  color: var(--accent-turquoise);
+}
+
+/* Social Links Row */
+.hero-socials-wrapper {
+  margin-bottom: 42px;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-out-expo);
+  padding: 4px;
+}
+
+.social-icon-btn:hover {
+  color: var(--accent-turquoise);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 10px rgba(54, 245, 227, 0.6));
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #728B8E;
+  user-select: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.scroll-down-indicator:hover {
+  color: var(--text-primary);
+}
+
+.mouse-icon {
+  width: 20px;
+  height: 32px;
+  border: 1.8px solid currentColor;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mouse-wheel {
+  width: 3px;
+  height: 6px;
+  background-color: var(--accent-emerald);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  animation: mouseScrollWheel 1.8s ease-in-out infinite;
+}
+
+@keyframes mouseScrollWheel {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.scroll-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT ZONE: Graphic Container
+   -------------------------------------------------------------------------- */
+
+.hero-graphic {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .hero-section {
+    padding: 10px 32px 40px;
+  }
+  .hero-heading-lead {
+    font-size: 46px;
+  }
+  .hero-heading-name {
+    font-size: 54px;
+  }
+  .hero-statement {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-section {
+    padding: 10px 24px 36px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    order: 2;
+  }
+  .hero-graphic {
+    order: 1;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-socials {
+    justify-content: center;
+  }
+  .scroll-down-indicator {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-heading-lead {
+    font-size: 38px;
+  }
+  .hero-heading-name {
+    font-size: 44px;
+  }
+  .hero-statement {
+    font-size: 15.5px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

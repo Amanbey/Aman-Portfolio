@@ -31,3 +31,4 @@ declare module 'lucide-react' {
   export const ChevronDown: LucideIcon;
   export const ChevronRight: LucideIcon;
 }
+

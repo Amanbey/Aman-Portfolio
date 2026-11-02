@@ -8,3 +8,4 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'experience', label: 'Experience', href: '#experience' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];
+

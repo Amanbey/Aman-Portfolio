@@ -31,3 +31,4 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({
 };
 
 export default StatsPanel;
+

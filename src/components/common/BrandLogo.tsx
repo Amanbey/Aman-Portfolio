@@ -53,3 +53,4 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ size = 32, showText = true
 };
 
 export default BrandLogo;
+

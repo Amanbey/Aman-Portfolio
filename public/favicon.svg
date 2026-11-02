@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" fill="none">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#36F5E3" />
+      <stop offset="100%" stop-color="#20E6B1" />
+    </linearGradient>
+  </defs>
+  <!-- Geometric Stylized A Mark -->
+  <path d="M7 32L18.5 7H21.5L33 32H26.2L20 18.2L13.8 32H7Z" fill="url(#logo-grad)" />
+  <rect x="14" y="24" width="12" height="4.5" rx="1.5" fill="url(#logo-grad)" />
+</svg>
+

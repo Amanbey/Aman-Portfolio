@@ -1,0 +1,93 @@
+/* ==========================================================================
+   LAYOUT ARCHITECTURE & SHELL STYLING
+   Signature Rounded Container with Subtle Glowing Outline
+   ========================================================================== */
+
+.app-viewport {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 18px;
+  background-color: var(--bg-canvas);
+  background-image: 
+    radial-gradient(ellipse 60% 40% at 85% 30%, rgba(32, 230, 177, 0.08), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 15% 80%, rgba(54, 245, 227, 0.05), transparent 70%);
+}
+
+/* The signature framed card enclosing the entire portfolio */
+.portfolio-shell {
+  width: 100%;
+  max-width: 1380px;
+  min-height: calc(100vh - 36px);
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 72% 38%, rgba(32, 230, 177, 0.16) 0%, rgba(54, 245, 227, 0.08) 25%, transparent 60%),
+    radial-gradient(circle at 10% 20%, rgba(6, 19, 23, 0.8) 0%, transparent 50%);
+  border: 1px solid var(--border-frame);
+  border-radius: var(--radius-frame);
+  box-shadow: var(--shadow-frame);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle corner light specular accent matching the reference */
+.portfolio-shell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(54, 245, 227, 0.4) 30%, 
+    rgba(32, 230, 177, 0.5) 70%, 
+    transparent 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Inner content container */
+.page-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section base */
+.portfolio-section {
+  width: 100%;
+  position: relative;
+}
+
+/* Responsive adjustments for outer shell */
+@media (max-width: 1024px) {
+  .app-viewport {
+    padding: 10px;
+  }
+
+  .portfolio-shell {
+    min-height: calc(100vh - 20px);
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-viewport {
+    padding: 0;
+  }
+
+  .portfolio-shell {
+    min-height: 100vh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+}
+

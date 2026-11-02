@@ -2,6 +2,9 @@ import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
+import Experience from './components/Experience/Experience';
 
 export const App: React.FC = () => {
   return (
@@ -18,10 +21,14 @@ export const App: React.FC = () => {
           {/* Phase 4: About Section */}
           <About />
 
-          {/* Remaining Section Anchor Placeholders */}
-          <section id="projects" style={{ minHeight: '1px' }} />
-          <section id="skills" style={{ minHeight: '1px' }} />
-          <section id="experience" style={{ minHeight: '1px' }} />
+          {/* Phase 5: Projects Section */}
+          <Projects />
+
+          {/* Phase 6: Skills & Experience Sections */}
+          <Skills />
+          <Experience />
+
+          {/* Remaining Section Anchor Placeholder */}
           <section id="contact" style={{ minHeight: '1px' }} />
         </main>
       </div>

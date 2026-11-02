@@ -1,0 +1,258 @@
+/* ==========================================================================
+   EXPERIENCE SECTION STYLES
+   Vertical Glowing Timeline, Concentric Nodes, Glass Cards
+   ========================================================================== */
+
+.experience-section {
+  width: 100%;
+  padding: 80px 48px 100px;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(80, 240, 210, 0.08);
+  overflow: hidden;
+}
+
+.experience-ambient-glow {
+  position: absolute;
+  top: 35%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(32, 230, 177, 0.1) 0%,
+    rgba(54, 245, 227, 0.04) 40%,
+    transparent 70%
+  );
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.experience-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   Vertical Glowing Timeline
+   -------------------------------------------------------------------------- */
+
+.timeline-wrapper {
+  position: relative;
+  margin-top: 50px;
+  padding-left: 32px;
+}
+
+/* Vertical Track */
+.timeline-track-line {
+  position: absolute;
+  top: 15px;
+  bottom: 30px;
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    #36F5E3 0%,
+    #20E6B1 40%,
+    rgba(32, 230, 177, 0.3) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(54, 245, 227, 0.4);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+/* Glowing Node Marker */
+.timeline-node {
+  position: absolute;
+  top: 28px;
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-node-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #36F5E3;
+  box-shadow: 0 0 12px #20E6B1, 0 0 20px rgba(54, 245, 227, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-node-pulse {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(54, 245, 227, 0.4);
+  animation: nodePulse 2.5s ease-out infinite;
+}
+
+@keyframes nodePulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Timeline Content Card */
+.timeline-content-card {
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 34px 36px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.timeline-content-card:hover {
+  border-color: rgba(54, 245, 227, 0.45);
+  background: var(--bg-surface-hover);
+  transform: translateX(4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(32, 230, 177, 0.1);
+}
+
+/* Card Header */
+.timeline-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.role-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-role {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.timeline-org {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-turquoise);
+}
+
+.org-icon {
+  color: var(--accent-emerald);
+}
+
+.timeline-period-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.period-icon {
+  color: var(--accent-emerald);
+}
+
+/* Description */
+.timeline-description {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* Highlights List */
+.timeline-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-highlight-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.highlight-point-icon {
+  color: var(--accent-emerald);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.highlight-point-text {
+  font-size: 14.5px;
+  color: #D4E2E3;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .experience-section {
+    padding: 60px 24px 80px;
+  }
+  .timeline-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .timeline-content-card {
+    padding: 26px 22px;
+  }
+  .timeline-role {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-wrapper {
+    padding-left: 24px;
+  }
+  .timeline-node {
+    left: -24px;
+  }
+  .timeline-content-card {
+    padding: 22px 18px;
+  }
+}
+

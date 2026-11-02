@@ -36,6 +36,8 @@ declare module 'lucide-react' {
   export const ChevronRight: LucideIcon;
   export const Terminal: LucideIcon;
   export const Database: LucideIcon;
+  export const Server: LucideIcon;
+  export const Wrench: LucideIcon;
   export const Briefcase: LucideIcon;
   export const Calendar: LucideIcon;
   export const MapPin: LucideIcon;

@@ -1,0 +1,310 @@
+/* ==========================================================================
+   ABOUT SECTION STYLES
+   Dark glassmorphism, emerald highlights, clean typography hierarchy
+   ========================================================================== */
+
+.about-section {
+  width: 100%;
+  padding: 80px 48px 100px;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(80, 240, 210, 0.08);
+  overflow: hidden;
+}
+
+.about-ambient-glow {
+  position: absolute;
+  top: 25%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(32, 230, 177, 0.12) 0%,
+    rgba(54, 245, 227, 0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header
+   -------------------------------------------------------------------------- */
+
+.section-header {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: var(--radius-badge);
+  background: var(--bg-badge);
+  border: 1px solid rgba(32, 230, 177, 0.28);
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-badge-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 8px var(--accent-emerald);
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+  max-width: 800px;
+}
+
+.title-highlight {
+  background: var(--gradient-name);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 660px;
+}
+
+/* --------------------------------------------------------------------------
+   About 2-Column Grid
+   -------------------------------------------------------------------------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* Left Narrative Card */
+.about-narrative-card {
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-glass);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.about-narrative-card:hover {
+  border-color: rgba(54, 245, 227, 0.4);
+}
+
+.narrative-heading {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.narrative-paragraph {
+  font-size: 15.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.text-highlight {
+  color: var(--accent-turquoise);
+  font-weight: 600;
+}
+
+.narrative-highlights {
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.highlight-check {
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+}
+
+.narrative-cta {
+  padding-top: 12px;
+}
+
+.about-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-turquoise);
+  font-size: 14.5px;
+  font-weight: 600;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.about-cta-link:hover {
+  color: var(--accent-emerald);
+  transform: translateX(3px);
+}
+
+/* Right Column: 3 Pillar Cards */
+.about-pillars-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pillar-card {
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 26px 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pillar-card:hover {
+  border-color: rgba(54, 245, 227, 0.45);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(32, 230, 177, 0.1);
+}
+
+.pillar-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.pillar-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(32, 230, 177, 0.12);
+  border: 1px solid rgba(32, 230, 177, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillar-icon {
+  color: var(--accent-turquoise);
+}
+
+.pillar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pillar-tag {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.pillar-card:hover .pillar-tag {
+  border-color: rgba(54, 245, 227, 0.25);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 60px 32px 80px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 50px 20px 70px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .section-subtitle {
+    font-size: 15px;
+  }
+  .about-narrative-card {
+    padding: 26px 20px;
+  }
+  .narrative-heading {
+    font-size: 20px;
+  }
+  .pillar-card {
+    padding: 20px 18px;
+  }
+}
+

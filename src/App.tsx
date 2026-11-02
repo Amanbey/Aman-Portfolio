@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
+import About from './components/About/About';
 
 export const App: React.FC = () => {
   return (
@@ -9,12 +10,15 @@ export const App: React.FC = () => {
         {/* Top Minimal Navigation Bar */}
         <Navbar activeSection="home" />
 
-        {/* Phase 2: Hero Section */}
+        {/* Portfolio Content Container */}
         <main className="page-container">
+          {/* Phase 2 & 3: Hero Section with 3D Depth */}
           <Hero />
 
-          {/* Section Anchor Placeholders for Navigation Destinations */}
-          <section id="about" style={{ minHeight: '1px' }} />
+          {/* Phase 4: About Section */}
+          <About />
+
+          {/* Remaining Section Anchor Placeholders */}
           <section id="projects" style={{ minHeight: '1px' }} />
           <section id="skills" style={{ minHeight: '1px' }} />
           <section id="experience" style={{ minHeight: '1px' }} />

@@ -17,6 +17,7 @@ declare module 'lucide-react' {
   export const Menu: LucideIcon;
   export const X: LucideIcon;
   export const ArrowRight: LucideIcon;
+  export const ArrowUpRight: LucideIcon;
   export const Mail: LucideIcon;
   export const Github: LucideIcon;
   export const Linkedin: LucideIcon;
@@ -26,9 +27,17 @@ declare module 'lucide-react' {
   export const Code2: LucideIcon;
   export const Layers: LucideIcon;
   export const Sparkles: LucideIcon;
+  export const Cpu: LucideIcon;
+  export const Bot: LucideIcon;
   export const Check: LucideIcon;
+  export const CheckCircle2: LucideIcon;
   export const Copy: LucideIcon;
   export const ChevronDown: LucideIcon;
   export const ChevronRight: LucideIcon;
+  export const Terminal: LucideIcon;
+  export const Database: LucideIcon;
+  export const Briefcase: LucideIcon;
+  export const Calendar: LucideIcon;
+  export const MapPin: LucideIcon;
+  export const User: LucideIcon;
 }
-
